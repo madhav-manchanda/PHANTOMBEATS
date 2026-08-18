@@ -1,0 +1,114 @@
+/* Icon Rail Styles */
+.icon-rail-container {
+  grid-area: sidebar;
+  width: 92px;
+  background-color: var(--elevation-1);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  z-index: 10;
+}
+
+.icon-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: var(--space-md) 0;
+}
+
+.rail-logo {
+  color: var(--primary);
+  margin-bottom: var(--space-xl);
+  display: flex;
+  justify-content: center;
+}
+
+.rail-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.rail-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.rail-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.rail-item svg {
+  width: 24px;
+  height: 24px;
+}
+
+.rail-item:hover {
+  color: var(--primary);
+  background-color: var(--elevation-2);
+}
+
+.rail-item.active {
+  color: var(--primary-container);
+}
+
+.rail-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 24px;
+  width: 4px;
+  background-color: var(--primary-container);
+  border-radius: 0 4px 4px 0;
+}
+
+.rail-spacer {
+  flex-grow: 1;
+}
+
+.rail-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  align-items: center;
+}
+
+.rail-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--rounded-full);
+  background-color: var(--elevation-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.rail-avatar svg {
+  width: 24px;
+  height: 24px;
+  color: var(--on-surface-variant);
+}
+
+/* Hide Icon Rail on mobile breakpoint */
+@media (max-width: 768px) {
+  .icon-rail-container {
+    display: none;
+  }
+}

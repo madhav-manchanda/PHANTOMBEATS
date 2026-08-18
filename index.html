@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="melodyflow">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Phantombeats — Music Streaming</title>
+  <meta name="description"
+    content="Stream millions of songs with PhantomBeats. Discover, play, and create playlists with a premium listening experience." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://html2canvas.hertzen.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https: ws: wss:; media-src 'self' blob: https:;" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/png" href="/assets/logo.png" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/design-tokens.css" />
+  <link rel="stylesheet" href="/components/IconRail.css" />
+  <link rel="stylesheet" href="/components/BottomNav.css" />
+  <link rel="stylesheet" href="/components/MiniPlayer.css" />
+  <link rel="stylesheet" href="/components/ImmersivePlayerSheet.css" />
+  <link rel="stylesheet" href="/components/UIPrimitives.css" />
+  <link rel="stylesheet" href="/components/Search.css" />
+  <link rel="stylesheet" href="/components/Home.css" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/themes/light.css" />
+  <link rel="stylesheet" href="/mobile.css" />
+  <link rel="stylesheet" href="/mobile-ui-polish.css" />
+  <link rel="stylesheet" href="/mobile-reference-layout.css" />
+</head>
+
+<body>
+  <div id="app">
+    <aside id="sidebar" class="icon-rail-container" aria-label="Main navigation"></aside>
+    <div id="mobile-sidebar-backdrop" class="mobile-sidebar-backdrop" aria-hidden="true"></div>
+
+    <main id="main-content" class="main-content">
+      <header id="top-bar" class="top-bar"></header>
+      <div id="view-container" class="view-container"></div>
+    </main>
+
+    <aside id="right-panel" class="right-panel hidden">
+      <div id="now-playing-detail" class="now-playing-detail"></div>
+      <div id="queue-panel" class="queue-section"></div>
+    </aside>
+
+    <footer id="player-bar" class="player-bar"></footer>
+    <div id="lyrics-panel-container" class="lyrics-panel-container"></div>
+    <nav id="mobile-tab-bar" class="mobile-tab-bar" aria-label="Mobile navigation"></nav>
+    <div id="mobile-player-overlay" class="mobile-player-overlay hidden"></div>
+    <div id="theme-overlay" class="theme-overlay"></div>
+    <div id="context-menu" class="context-menu hidden"></div>
+    <div id="toast-container" class="toast-container"></div>
+
+    <div id="modal-overlay" class="modal-overlay hidden">
+      <div class="modal">
+        <h3 class="modal-title">Create Playlist</h3>
+        <input type="text" id="playlist-name-input" class="modal-input" placeholder="Playlist name..." maxlength="50" />
+        <div class="modal-actions">
+          <button id="modal-cancel" class="btn btn-secondary">Cancel</button>
+          <button id="modal-create" class="btn btn-primary">Create</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="auth-modal" class="auth-modal-root"></div>
+    <div id="import-modal" class="import-modal-root"></div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+  <script src="/mobile-enhancements.js"></script>
+  <script src="/mobile-ui-polish.js"></script>
+</body>
+
+</html>

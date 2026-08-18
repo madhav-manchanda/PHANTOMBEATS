@@ -1,0 +1,109 @@
+:root {
+  /* Fonts */
+  --font-family: 'Hanken Grotesk', sans-serif;
+
+  /* Palette */
+  --surface: #131313;
+  --surface-container-lowest: #0e0e0e;
+  --primary: #ffffff;
+  --primary-container: #c3f400; /* Lime */
+  --primary-fixed: #c3f400;
+  
+  /* Elevation */
+  --elevation-0: #050505; /* Background */
+  --elevation-1: #121212; /* Cards */
+  --elevation-2: #1A1A1A; /* Hover / Overlay */
+  
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --on-surface: #ffffff;
+  --on-surface-variant: rgba(255, 255, 255, 0.7);
+
+  /* Radii */
+  --rounded-xs: 4px; /* Album artwork */
+  --rounded: 8px; /* Buttons/inputs */
+  --rounded-lg: 12px; /* Cards/modals */
+  --rounded-full: 9999px; /* Pills/avatars/play buttons */
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 40px;
+  --space-xxl: 48px;
+  --space-xxxl: 56px;
+
+  /* Typography */
+  --text-display-lg-size: 48px;
+  --text-display-lg-height: 56px;
+  --text-display-lg-tracking: -0.02em;
+  
+  --text-headline-lg-size: 32px;
+  --text-headline-lg-height: 40px;
+  
+  --text-headline-lg-mobile-size: 24px;
+  --text-headline-lg-mobile-height: 32px;
+  
+  --text-title-md-size: 18px;
+  --text-title-md-height: 24px;
+  --text-title-md-weight: 600;
+  
+  --text-body-md-size: 16px;
+  --text-body-md-height: 24px;
+  
+  --text-label-sm-size: 13px;
+  --text-label-sm-height: 16px;
+  --text-label-sm-weight: 500;
+  --text-label-sm-tracking: 0.02em;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--elevation-0);
+  color: var(--on-surface);
+  margin: 0;
+  padding: 0;
+}
+
+/* Typographic utility classes */
+.display-lg {
+  font-size: var(--text-display-lg-size);
+  line-height: var(--text-display-lg-height);
+  letter-spacing: var(--text-display-lg-tracking);
+  font-weight: 700;
+}
+
+.headline-lg {
+  font-size: var(--text-headline-lg-size);
+  line-height: var(--text-headline-lg-height);
+  font-weight: 700;
+}
+
+.headline-lg-mobile {
+  font-size: var(--text-headline-lg-mobile-size);
+  line-height: var(--text-headline-lg-mobile-height);
+  font-weight: 700;
+}
+
+.title-md {
+  font-size: var(--text-title-md-size);
+  line-height: var(--text-title-md-height);
+  font-weight: var(--text-title-md-weight);
+}
+
+.body-md {
+  font-size: var(--text-body-md-size);
+  line-height: var(--text-body-md-height);
+}
+
+.label-sm {
+  font-size: var(--text-label-sm-size);
+  line-height: var(--text-label-sm-height);
+  font-weight: var(--text-label-sm-weight);
+  letter-spacing: var(--text-label-sm-tracking);
+  text-transform: uppercase;
+}
+
+.text-secondary {
+  color: var(--on-surface-variant);
+}

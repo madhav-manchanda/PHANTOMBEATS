@@ -1,0 +1,72 @@
+/* Search View CSS */
+.search-view-container {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+
+.search-results-layout {
+  display: flex;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.top-result-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.songs-list-section {
+  flex: 2;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.section-title {
+  font-size: var(--text-headline-sm-size);
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  color: var(--on-surface);
+}
+
+.browse-all-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-md);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xxl);
+  color: var(--on-surface-variant);
+  text-align: center;
+}
+
+.empty-state h3 {
+  font-size: var(--text-headline-sm-size);
+  color: var(--on-surface);
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .search-results-layout {
+    flex-direction: column;
+  }
+  .songs-list-section {
+    min-width: 100%;
+  }
+}

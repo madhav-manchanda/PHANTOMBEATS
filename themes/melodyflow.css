@@ -1,0 +1,54 @@
+
+
+:root,
+[data-theme="melodyflow"] {
+  
+  --font-display: 'Outfit', sans-serif;
+
+  
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #111111;
+  --bg-sidebar: #000000;
+  --bg-player: rgba(13, 13, 13, 0.97);
+  --bg-topbar: rgba(13, 13, 13, 0.88);
+  --bg-card: rgba(28, 28, 28, 0.65);
+  --bg-card-hover: rgba(42, 42, 42, 0.75);
+  --bg-hover: rgba(255, 255, 255, 0.06);
+  --bg-active: rgba(255, 255, 255, 0.08);
+  --bg-progress: rgba(255, 255, 255, 0.12);
+
+  
+  --accent-primary: #ffffff;
+  --accent-secondary: #b3b3b3;
+  --accent-tertiary: #808080;
+  --accent-gradient: linear-gradient(135deg, #ffffff, #b3b3b3);
+  --accent-glow: rgba(255, 255, 255, 0.08);
+  --accent-text: #000000;
+
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #585858;
+  --text-gradient: linear-gradient(135deg, #ffffff, #b3b3b3);
+
+  
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+
+  
+  --glow-sm: 0 0 8px rgba(255, 255, 255, 0.04);
+  --glow-md: 0 0 16px rgba(255, 255, 255, 0.06);
+  --glow-lg: 0 0 32px rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  
+  --hero-gradient: linear-gradient(135deg, #1a1a1a 0%, #141414 50%, #0f0f0f 100%);
+  --hero-overlay: linear-gradient(to top, rgba(13, 13, 13, 0.7), transparent);
+
+  
+  --playlist-header-bg: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), transparent);
+
+  
+  --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+  --scrollbar-hover: rgba(255, 255, 255, 0.2);
+}

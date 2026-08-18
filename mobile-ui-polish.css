@@ -1,0 +1,196 @@
+/* PhantomBeats — mobile UI polish v2
+   Dedicated fixes for the compact/mobile shell and navigation drawer.
+   Loaded after mobile.css so these rules intentionally win on small screens.
+*/
+
+@media (max-width: 768px) {
+  :root {
+    --mobile-gutter: clamp(12px, 4vw, 18px);
+    --mobile-radius: 16px;
+    --mobile-nav-h: calc(64px + env(safe-area-inset-bottom, 0px));
+    --mobile-drawer-w: min(86vw, 340px);
+  }
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body.mobile-drawer-open {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  #app {
+    display: block !important;
+    width: 100%;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .main-content {
+    width: 100%;
+    min-width: 0;
+    min-height: 100dvh;
+  }
+
+  .view-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: var(--mobile-gutter) !important;
+    padding-right: var(--mobile-gutter) !important;
+    padding-bottom: calc(148px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* ----------------------------- Header -------------------------------- */
+  .top-bar {
+    min-height: 56px !important;
+    height: 56px;
+    padding: 8px var(--mobile-gutter) !important;
+    gap: 8px !important;
+  }
+
+  #mobile-menu-toggle {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px;
+    border-radius: 12px !important;
+  }
+
+  #mobile-menu-toggle svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .search-bar {
+    min-width: 0 !important;
+  }
+
+  .search-bar input {
+    height: 40px !important;
+    border-radius: 12px !important;
+    font-size: 13px !important;
+  }
+
+  .top-bar-right {
+    min-width: 0;
+  }
+
+  .account-avatar-btn,
+  .auth-signin-btn {
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    border-radius: 12px;
+  }
+
+  .auth-signin-btn span {
+    display: none;
+  }
+
+  #mobile-menu-toggle {
+    display: none !important;
+  }
+
+  /* ------------------------ Mobile drawer -------------------------------- */
+  #sidebar {
+    display: none !important;
+  }
+
+  #mobile-sidebar-backdrop {
+    display: none !important;
+  }
+
+  /* --------------------------- Content ---------------------------------- */
+  .home-hero {
+    overflow: hidden;
+    min-height: 145px !important;
+    padding: 22px 18px !important;
+    margin-top: 4px;
+  }
+
+  .home-greeting {
+    font-size: clamp(22px, 7vw, 30px) !important;
+  }
+
+  .section-title {
+    font-size: 17px !important;
+  }
+
+  .song-card {
+    flex-basis: min(43vw, 170px) !important;
+  }
+
+  .track-row {
+    min-height: 60px !important;
+  }
+
+  /* --------------------------- Player ----------------------------------- */
+  .player-bar {
+    left: 10px !important;
+    right: 10px !important;
+    bottom: calc(var(--mobile-nav-h) + 7px) !important;
+    height: 56px !important;
+    border-radius: var(--rounded-lg) !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .mobile-tab-bar {
+    height: var(--mobile-nav-h) !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    padding-top: 4px !important;
+  }
+
+  .mobile-tab {
+    min-height: 54px;
+    border-radius: 13px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --mobile-gutter: 12px;
+    --mobile-drawer-w: min(88vw, 316px);
+  }
+
+  .top-bar {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .search-bar input {
+    font-size: 12px !important;
+  }
+
+  .sidebar-logo-text {
+    font-size: 17px !important;
+  }
+
+  .nav-item,
+  #app.sidebar-collapsed .nav-item {
+    min-height: 46px !important;
+  }
+
+  .player-song-artist {
+    max-width: 100px;
+  }
+}
+
+@media (min-width: 769px) {
+  #mobile-sidebar-backdrop {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sidebar,
+  #mobile-sidebar-backdrop,
+  .mobile-more-panel {
+    transition: none !important;
+    animation: none !important;
+  }
+}

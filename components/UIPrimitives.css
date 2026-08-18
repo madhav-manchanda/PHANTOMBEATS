@@ -1,0 +1,187 @@
+/* UI Primitives CSS */
+
+/* Track Row */
+.track-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--rounded);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.track-row:hover {
+  background-color: var(--elevation-2);
+}
+
+.track-row-index {
+  color: var(--on-surface-variant);
+  font-size: var(--text-label-sm-size);
+  width: 24px;
+  text-align: right;
+}
+
+.track-row-img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--rounded-xs);
+  object-fit: cover;
+}
+
+.track-row-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.track-row-title {
+  font-size: var(--text-title-md-size);
+  font-weight: var(--text-title-md-weight);
+  color: var(--on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-row-artist {
+  font-size: var(--text-body-md-size);
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-row-duration {
+  font-family: 'Inter', monospace; /* Faux-monospace style */
+  font-size: var(--text-label-sm-size);
+  color: var(--on-surface-variant);
+}
+
+/* Track Card / Playlist Card */
+.track-card, .playlist-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  background-color: var(--elevation-1);
+  padding: var(--space-sm);
+  border-radius: var(--rounded-lg);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.track-card:hover, .playlist-card:hover {
+  background-color: var(--elevation-2);
+  transform: translateY(-4px);
+}
+
+.track-card-img, .playlist-card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--rounded-xs);
+  object-fit: cover;
+  margin-bottom: var(--space-xs);
+}
+
+.track-card-title, .playlist-card-title {
+  font-size: var(--text-title-md-size);
+  font-weight: var(--text-title-md-weight);
+  color: var(--on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-card-artist, .playlist-card-subtitle {
+  font-size: var(--text-body-md-size);
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Genre Tile */
+.genre-tile {
+  position: relative;
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.genre-tile:hover {
+  transform: scale(1.02);
+}
+
+.genre-tile::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.genre-tile-label {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  font-size: var(--text-title-md-size);
+  font-weight: var(--text-title-md-weight);
+  color: var(--on-surface);
+  z-index: 2;
+}
+
+/* Search Bar */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--elevation-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--rounded-full);
+  padding: 4px 4px 4px var(--space-md);
+  height: 48px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-bar-container svg {
+  color: var(--on-surface-variant);
+  width: 20px;
+  height: 20px;
+}
+
+.search-bar-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--on-surface);
+  font-size: var(--text-body-md-size);
+  padding: 0 var(--space-sm);
+  outline: none;
+}
+
+.search-bar-input::placeholder {
+  color: var(--on-surface-variant);
+}
+
+.search-bar-explore {
+  background-color: var(--primary);
+  color: var(--surface);
+  border: none;
+  border-radius: var(--rounded-full);
+  padding: 0 var(--space-lg);
+  height: 40px;
+  font-size: var(--text-label-sm-size);
+  font-weight: var(--text-label-sm-weight);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-bar-explore:hover {
+  background-color: var(--on-surface-variant);
+}

@@ -1,0 +1,273 @@
+
+
+[data-theme="dreadflow"] {
+  
+  --font-display: 'Creepster', cursive;
+  --font-body: 'VT323', 'Special Elite', 'Courier New', Courier, monospace;
+
+  
+  --bg-primary: #050705;
+  --bg-secondary: #0a0e0a;
+  --bg-sidebar: #040604;
+  --bg-player: #030403;
+  --bg-topbar: rgba(5, 7, 5, 0.95);
+  --bg-card: rgba(15, 20, 15, 0.8);
+  --bg-card-hover: rgba(25, 30, 25, 0.9);
+  --bg-hover: rgba(34, 197, 94, 0.08); 
+  --bg-active: rgba(230, 0, 0, 0.15);  
+  --bg-progress: rgba(255, 255, 255, 0.1);
+
+  
+  --accent-primary: #e60000;      
+  --accent-secondary: #22c55e;    
+  --accent-tertiary: #1a4d1a;
+  --accent-gradient: linear-gradient(135deg, #e60000, #990000);
+  --accent-glow: rgba(230, 0, 0, 0.2);
+
+  
+  --text-primary: #c8d8c8;        
+  --text-secondary: #8a9c8a;
+  --text-muted: #5e6b5e;
+  --text-gradient: linear-gradient(135deg, #e60000, #ff3333);
+
+  
+  --border-color: #223322;
+  --border-subtle: #111a11;
+
+  
+  --glow-sm: 0 4px 0px rgba(0, 0, 0, 0.8);
+  --glow-md: 0 8px 0px rgba(0, 0, 0, 0.9);
+  --glow-lg: 0 12px 0px rgba(0, 0, 0, 1);
+  --card-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+
+  
+  --hero-gradient: linear-gradient(135deg, #110505 0%, #050705 100%);
+  --hero-overlay: linear-gradient(to top, #050705, transparent);
+
+  
+  --playlist-header-bg: linear-gradient(to bottom, rgba(230, 0, 0, 0.1), transparent);
+
+  
+  --scrollbar-thumb: #223322;
+  --scrollbar-hover: #e60000;
+}
+
+
+
+
+[data-theme="dreadflow"] * {
+  border-radius: 0 !important;
+}
+
+[data-theme="dreadflow"] body {
+  font-family: var(--font-body) !important;
+  text-transform: uppercase;
+}
+
+
+[data-theme="dreadflow"] .top-bar {
+  border-top: 2px dashed var(--accent-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+
+[data-theme="dreadflow"] .search-bar input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+  font-family: var(--font-body) !important;
+  transition: all 0.2s !important;
+}
+[data-theme="dreadflow"] .search-bar input:focus {
+  border-bottom: 2px solid var(--accent-secondary) !important;
+}
+
+
+[data-theme="dreadflow"] .nav-item.active {
+  color: var(--accent-secondary) !important;
+  background: transparent !important;
+  border-left: 4px solid var(--accent-secondary) !important;
+}
+[data-theme="dreadflow"] .nav-item:hover {
+  color: var(--text-primary) !important;
+}
+[data-theme="dreadflow"] .sidebar-section-title {
+  color: var(--accent-primary) !important;
+}
+
+[data-theme="dreadflow"] .playlist-item::before {
+  content: "+ ";
+  color: var(--text-muted);
+  margin-right: 2px;
+}
+[data-theme="dreadflow"] .playlist-item-icon {
+  display: none !important; 
+}
+
+
+[data-theme="dreadflow"] .play-btn {
+  background: var(--accent-primary) !important;
+  border: 1px solid #111 !important;
+  color: #111 !important;
+  box-shadow: 0 0 15px rgba(230, 0, 0, 0.4) !important;
+  border-radius: 0 !important;
+}
+[data-theme="dreadflow"] .play-btn:hover {
+  box-shadow: 0 0 25px rgba(230, 0, 0, 0.8) !important;
+  transform: none !important;
+  background: #ff0000 !important;
+}
+
+
+[data-theme="dreadflow"] .progress-bar-container,
+[data-theme="dreadflow"] .volume-range-slider {
+  height: 2px !important;
+  border-radius: 0 !important;
+}
+[data-theme="dreadflow"] .progress-bar-container {
+  background: #223322 !important;
+}
+[data-theme="dreadflow"] .volume-range-slider {
+  background: linear-gradient(to right, var(--accent-secondary) var(--volume-pct, 70%), #223322 var(--volume-pct, 70%)) !important;
+}
+[data-theme="dreadflow"] .progress-bar {
+  background: var(--accent-primary) !important;
+  border-radius: 0 !important;
+}
+[data-theme="dreadflow"] .progress-bar::after {
+  width: 6px !important;
+  height: 12px !important;
+  background: #fff !important;
+  right: -3px !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+[data-theme="dreadflow"] .progress-bar-container:hover .progress-bar::after {
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+[data-theme="dreadflow"] .volume-range-slider::-webkit-slider-thumb {
+  background: var(--accent-secondary) !important; 
+  border-radius: 0 !important;
+}
+
+
+[data-theme="dreadflow"] .section-title,
+[data-theme="dreadflow"] .queue-title,
+[data-theme="dreadflow"] .queue-now-playing-label {
+  color: var(--accent-primary) !important;
+  letter-spacing: 2px;
+}
+[data-theme="dreadflow"] .queue-now-playing {
+  border: 1px solid var(--accent-primary) !important;
+  box-shadow: inset 0 0 20px rgba(230, 0, 0, 0.05) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+[data-theme="dreadflow"] .queue-track.playing .queue-track-title {
+  color: var(--accent-primary) !important;
+}
+
+
+[data-theme="dreadflow"] .modal-input {
+  background: transparent !important;
+  border-bottom: 2px solid var(--accent-primary) !important;
+  text-transform: uppercase;
+  border-radius: 0 !important;
+}
+
+
+[data-theme="dreadflow"] img,
+[data-theme="dreadflow"] .song-card,
+[data-theme="dreadflow"] .song-card-img-wrapper,
+[data-theme="dreadflow"] .playlist-card {
+  border-radius: 0 !important;
+}
+
+
+[data-theme="dreadflow"] .player-song-title {
+  font-family: var(--font-display) !important;
+  font-size: 20px !important;
+  letter-spacing: 1.5px;
+  color: var(--accent-primary) !important;
+}
+[data-theme="dreadflow"] .player-song-artist {
+  text-transform: uppercase;
+}
+
+
+[data-theme="dreadflow"] .track-row-number {
+  color: var(--accent-primary) !important;
+}
+
+
+[data-theme="dreadflow"] .btn {
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  font-family: var(--font-body) !important;
+}
+
+
+[data-theme="dreadflow"],
+[data-theme="dreadflow"] * {
+  cursor: none !important;
+}
+
+
+[data-theme="dreadflow"] body::after {
+  content: "";
+  position: fixed;
+  top: var(--cursor-y, -100px);
+  left: var(--cursor-x, -100px);
+  width: 12px;
+  height: 12px;
+  background-color: #ffcc00;
+  border-radius: 100% !important;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: color-dodge;
+  transition: width 0.15s, height 0.15s, background-color 0.15s, opacity 0.0s;
+  box-shadow: 0 0 15px #ffcc00;
+}
+
+
+html[data-cursor-hover="true"][data-theme="dreadflow"] body::after {
+  width: 24px;
+  height: 24px;
+  background-color: var(--accent-secondary);
+  box-shadow: 0 0 10px var(--accent-secondary);
+  mix-blend-mode: screen;
+}
+
+
+@keyframes dreadBlink {
+  0%, 96%, 100% { transform: scaleY(1); }
+  98% { transform: scaleY(0.1); }
+}
+[data-theme="dreadflow"] .sidebar-logo {
+  gap: 12px;
+}
+[data-theme="dreadflow"] .sidebar-logo-icon {
+  width: 32px;
+  height: 32px;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-theme="dreadflow"] .sidebar-logo-icon svg {
+  width: 28px;
+  height: 28px;
+  animation: dreadBlink 5s infinite;
+  color: var(--accent-primary);
+  filter: drop-shadow(0 0 6px rgba(230, 0, 0, 0.6));
+}
+[data-theme="dreadflow"] .sidebar-logo-text {
+  color: var(--accent-primary) !important;
+  font-family: var(--font-display) !important;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0px #000;
+}

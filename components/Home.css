@@ -1,0 +1,299 @@
+/* Home View CSS */
+.home-view-container {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
+}
+
+.home-brand-label {
+  color: var(--primary-container);
+  font-size: var(--text-label-sm-size);
+  font-weight: var(--text-label-sm-weight);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.home-greeting {
+  font-size: var(--text-display-lg-size);
+  font-weight: 700;
+  letter-spacing: var(--text-display-lg-tracking);
+  color: var(--on-surface);
+  margin: 0;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.home-section-title {
+  font-size: var(--text-label-sm-size);
+  font-weight: var(--text-label-sm-weight);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-surface);
+  margin: 0;
+}
+
+/* Horizontal scroll for pills/cards */
+.home-carousel {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  padding-bottom: var(--space-sm);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.home-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Made For This Moment Pill */
+.made-for-moment-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--elevation-1);
+  border-radius: var(--rounded);
+  padding: var(--space-xs);
+  padding-right: var(--space-xl);
+  min-width: 260px;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.made-for-moment-card:hover {
+  background: var(--elevation-2);
+}
+
+.made-for-moment-img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--rounded-xs);
+  object-fit: cover;
+}
+
+.made-for-moment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.made-for-moment-title {
+  font-size: var(--text-body-md-size);
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.made-for-moment-subtitle {
+  font-size: var(--text-label-sm-size);
+  color: var(--on-surface-variant);
+}
+
+/* Your Rotation Card */
+.rotation-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 200px;
+  max-width: 240px;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.rotation-card:hover {
+  transform: translateY(-4px);
+}
+
+.rotation-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+}
+
+.rotation-card.artist .rotation-img-wrapper {
+  border-radius: 50%;
+}
+
+.rotation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rotation-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rotation-title {
+  font-size: var(--text-title-md-size);
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.rotation-subtitle {
+  font-size: var(--text-body-md-size);
+  color: var(--on-surface-variant);
+}
+
+/* Desktop vs Mobile display toggles */
+.desktop-only { display: flex; }
+.mobile-only { display: none; }
+
+/* MOBILE SPECIFIC CSS */
+.mobile-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: var(--space-sm);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.mobile-card-grid {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-sm);
+}
+
+.mobile-card-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-square-card {
+  min-width: 140px;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  scroll-snap-align: start;
+}
+
+.mobile-square-img {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--rounded);
+  object-fit: cover;
+}
+
+.mobile-square-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobile-square-subtitle {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobile-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-xs) 0;
+  background: var(--elevation-1);
+  border-radius: var(--rounded);
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.mobile-list-img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--rounded-xs);
+  object-fit: cover;
+}
+
+.mobile-list-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobile-list-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.mobile-list-subtitle {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+}
+
+.mobile-list-action {
+  color: var(--primary-container);
+  padding: 8px;
+}
+
+.recommended-card {
+  width: 100%;
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16/9;
+}
+
+.recommended-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recommended-badge {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  color: var(--primary-container);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .home-view-container {
+    padding: var(--space-md);
+  }
+  
+  .desktop-only { display: none !important; }
+  .mobile-only { display: flex; flex-direction: column; gap: var(--space-xl); }
+  
+  .home-greeting {
+    font-size: 28px;
+  }
+  
+  .home-brand-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    margin-bottom: 2px;
+  }
+}

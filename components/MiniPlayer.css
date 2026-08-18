@@ -1,0 +1,356 @@
+/* MiniPlayer Desktop Layout CSS */
+.mini-player-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--space-md);
+  background-color: #000; /* Solid dark bar */
+  color: var(--on-surface);
+}
+
+.mini-player-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex: 1;
+  min-width: 0;
+}
+
+.player-album-art {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--rounded-xs);
+  object-fit: cover;
+}
+
+.player-song-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.player-song-title {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-song-artist {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-song-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-left: var(--space-sm);
+}
+
+.player-action-btn {
+  background: none;
+  border: none;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+}
+
+.player-action-btn:hover {
+  color: var(--on-surface);
+}
+
+.player-action-btn.liked {
+  color: var(--primary-container);
+}
+
+/* Center Controls */
+.player-controls {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 600px;
+}
+
+.player-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.player-btn {
+  background: none;
+  border: none;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+  transition: transform 0.1s ease;
+}
+
+.player-btn:hover {
+  color: var(--on-surface);
+  transform: scale(1.1);
+}
+
+.player-btn.play-btn {
+  background-color: var(--primary-container);
+  color: #000;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.player-btn.play-btn:hover {
+  transform: scale(1.05);
+  background-color: #d1ff1a;
+}
+
+.player-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.player-time {
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  min-width: 35px;
+  text-align: center;
+}
+
+.progress-bar-container {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary-container);
+  border-radius: 2px;
+}
+
+.invisible-seeker {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.visualizer-canvas {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  pointer-events: none;
+  display: none;
+}
+
+/* Right Controls */
+.player-extra {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.player-extra button,
+.volume-control button {
+  background: none;
+  border: none;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+}
+
+.player-extra button:hover,
+.volume-control button:hover {
+  color: var(--on-surface);
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.volume-range-slider {
+  width: 80px;
+  height: 4px;
+  -webkit-appearance: none;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.volume-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--on-surface);
+  cursor: pointer;
+}
+
+/* Mobile mini-player bar */
+@media (max-width: 768px) {
+  .mini-player-container {
+    padding: 0 16px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--rounded-lg);
+    height: 56px;
+  }
+
+  /* Hide desktop-only extras */
+  .player-extra,
+  .player-song-actions {
+    display: none !important;
+  }
+
+  .mini-player-info {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  .player-album-art {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--rounded);
+  }
+
+  .player-song-details {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .player-song-title {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .player-song-artist {
+    font-size: 12px;
+  }
+
+  /* Restyle desktop controls as a compact mobile row:
+     only play-btn + next-btn survive (shuffle/prev/repeat already hidden) */
+  .player-controls {
+    flex: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+    max-width: none;
+  }
+
+  .player-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .player-btn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .player-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .play-btn {
+    background-color: var(--primary-container) !important;
+    color: #000 !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: var(--rounded-full);
+    box-shadow: none !important;
+  }
+
+  .play-btn:active {
+    transform: scale(0.92);
+  }
+
+  #next-btn {
+    color: var(--on-surface);
+  }
+
+  /* Keep thin progress bar at top */
+  .player-progress {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    z-index: 2;
+  }
+
+  .player-time {
+    display: none !important;
+  }
+
+  .progress-bar-container {
+    height: 3px !important;
+    border-radius: 3px 3px 0 0 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .progress-bar {
+    border-radius: 3px 3px 0 0 !important;
+  }
+
+  .progress-bar::after {
+    display: none !important;
+  }
+}

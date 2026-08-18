@@ -1,0 +1,547 @@
+
+
+[data-theme="retroflow"] {
+  
+  --font-display: 'VT323', 'Courier New', monospace;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  
+  --bg-primary: #120e1f;
+  --bg-secondary: #1a1528;
+  --bg-sidebar: #161125;
+  --bg-player: #181329;
+  --bg-topbar: rgba(18, 14, 31, 0.92);
+  --bg-card: #201832;
+  --bg-card-hover: #291f40;
+  --bg-hover: rgba(180, 140, 220, 0.15);
+  --bg-active: rgba(255, 107, 138, 0.2);
+  --bg-progress: rgba(255, 255, 255, 0.08);
+
+  
+  --accent-primary: #ff6b8a;       
+  --accent-secondary: #7ec8e3;     
+  --accent-tertiary: #b48aff;      
+  --accent-gradient: linear-gradient(135deg, #ff6b8a, #ffb347, #b48aff);
+  --accent-glow: rgba(255, 107, 138, 0.2);
+
+  
+  --text-primary: #e8dff5;
+  --text-secondary: #bbaed1;
+  --text-muted: #8b7ca8;
+  --text-gradient: linear-gradient(135deg, #ff6b8a, #b48aff);
+
+  
+  --border-color: rgba(100, 60, 140, 0.15);
+  --border-subtle: rgba(100, 60, 140, 0.08);
+
+  
+  --glow-sm: 3px 3px 0px rgba(180, 138, 255, 0.3), -2px -2px 0px rgba(255, 255, 255, 0.7);
+  --glow-md: 4px 4px 0px rgba(180, 138, 255, 0.35), -3px -3px 0px rgba(255, 255, 255, 0.8);
+  --glow-lg: 6px 6px 0px rgba(180, 138, 255, 0.4), -4px -4px 0px rgba(255, 255, 255, 0.85);
+  --card-shadow: 4px 4px 0px rgba(100, 60, 140, 0.2),
+                 -3px -3px 0px rgba(255, 255, 255, 0.6),
+                 inset 1px 1px 0px rgba(255, 255, 255, 0.5),
+                 inset -1px -1px 0px rgba(100, 60, 140, 0.1);
+
+  
+  --hero-gradient: linear-gradient(135deg, #201832 0%, #301f35 50%, #1a1528 100%);
+  --hero-overlay: linear-gradient(to top, rgba(18, 14, 31, 0.9), transparent);
+
+  
+  --playlist-header-bg: linear-gradient(to bottom, rgba(255, 107, 138, 0.1), transparent);
+
+  
+  --scrollbar-thumb: rgba(180, 138, 255, 0.3);
+  --scrollbar-hover: #ff6b8a;
+}
+
+
+
+
+[data-theme="retroflow"] *:not(img):not(svg):not(path):not(circle):not(line):not(polyline):not(rect):not(ellipse):not(polygon) {
+  border-radius: 12px !important;
+}
+
+[data-theme="retroflow"] body {
+  font-family: var(--font-body) !important;
+  background: var(--bg-primary) !important;
+}
+
+
+[data-theme="retroflow"] #app::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(100, 60, 140, 0.02) 2px,
+    rgba(100, 60, 140, 0.02) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
+[data-theme="retroflow"] .player-bar {
+  background: var(--bg-player) !important;
+  border-top: 3px solid rgba(255, 255, 255, 0.5) !important;
+  border-left: 3px solid rgba(255, 255, 255, 0.4) !important;
+  border-right: 3px solid rgba(100, 60, 140, 0.2) !important;
+  border-bottom: 3px solid rgba(100, 60, 140, 0.25) !important;
+  backdrop-filter: none !important;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.5),
+              inset -1px -1px 0px rgba(100, 60, 140, 0.15) !important;
+}
+
+
+[data-theme="retroflow"] .top-bar {
+  background: var(--bg-topbar) !important;
+  backdrop-filter: none !important;
+  border-bottom: 3px solid rgba(100, 60, 140, 0.15) !important;
+  border-top: 2px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+
+[data-theme="retroflow"] .sidebar {
+  background: var(--bg-sidebar) !important;
+  border-right: 3px solid rgba(100, 60, 140, 0.15) !important;
+  box-shadow: inset -1px 0 0 rgba(100, 60, 140, 0.1),
+              inset 2px 0 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+
+[data-theme="retroflow"] .song-card {
+  background: var(--bg-card) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(100, 60, 140, 0.2) !important;
+  border-bottom-color: rgba(100, 60, 140, 0.25) !important;
+  box-shadow: 3px 3px 0px rgba(100, 60, 140, 0.15),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.6) !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-theme="retroflow"] .song-card:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 5px 5px 0px rgba(100, 60, 140, 0.2),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.7) !important;
+}
+
+[data-theme="retroflow"] .song-card:active {
+  transform: translate(1px, 1px) !important;
+  box-shadow: 1px 1px 0px rgba(100, 60, 140, 0.1),
+              inset 2px 2px 4px rgba(100, 60, 140, 0.15) !important;
+}
+
+
+[data-theme="retroflow"] .btn,
+[data-theme="retroflow"] button {
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(100, 60, 140, 0.25) !important;
+  border-bottom-color: rgba(100, 60, 140, 0.3) !important;
+  box-shadow: 2px 2px 0px rgba(100, 60, 140, 0.12),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.5) !important;
+  transition: all 0.15s ease !important;
+}
+
+[data-theme="retroflow"] .btn:hover,
+[data-theme="retroflow"] button:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0px rgba(100, 60, 140, 0.18),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.6) !important;
+}
+
+[data-theme="retroflow"] .btn:active,
+[data-theme="retroflow"] button:active {
+  transform: translate(1px, 1px) !important;
+  border: 2px solid rgba(100, 60, 140, 0.2) !important;
+  border-top-color: rgba(100, 60, 140, 0.25) !important;
+  border-left-color: rgba(100, 60, 140, 0.2) !important;
+  box-shadow: inset 2px 2px 4px rgba(100, 60, 140, 0.15) !important;
+}
+
+
+[data-theme="retroflow"] .play-btn {
+  background: var(--accent-primary) !important;
+  color: #fff !important;
+  border: 3px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(200, 50, 80, 0.4) !important;
+  border-bottom-color: rgba(200, 50, 80, 0.5) !important;
+  box-shadow: 3px 3px 0px rgba(200, 50, 80, 0.3),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.4) !important;
+  border-radius: 50% !important;
+}
+
+[data-theme="retroflow"] .play-btn:hover {
+  background: #ff8da3 !important;
+  box-shadow: 4px 4px 0px rgba(200, 50, 80, 0.3),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.5),
+              0 0 20px rgba(255, 107, 138, 0.3) !important;
+}
+
+
+[data-theme="retroflow"] .search-bar input {
+  background: #1e172e !important;
+  border: 2px solid rgba(100, 60, 140, 0.15) !important;
+  border-top-color: rgba(100, 60, 140, 0.2) !important;
+  border-left-color: rgba(100, 60, 140, 0.18) !important;
+  box-shadow: inset 2px 2px 4px rgba(100, 60, 140, 0.1),
+              inset -1px -1px 0px rgba(255, 255, 255, 0.5) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+}
+
+[data-theme="retroflow"] .search-bar input:focus {
+  border-color: var(--accent-primary) !important;
+  box-shadow: inset 2px 2px 4px rgba(255, 107, 138, 0.12),
+              0 0 0 3px rgba(255, 107, 138, 0.15) !important;
+}
+
+[data-theme="retroflow"] .search-bar input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+
+[data-theme="retroflow"] .nav-item {
+  border-radius: 10px !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-theme="retroflow"] .nav-item:hover {
+  background: rgba(255, 107, 138, 0.1) !important;
+  transform: translate(-1px, -1px);
+}
+
+[data-theme="retroflow"] .nav-item.active {
+  background: rgba(255, 107, 138, 0.15) !important;
+  color: var(--accent-primary) !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  border-right-color: rgba(255, 107, 138, 0.2) !important;
+  border-bottom-color: rgba(255, 107, 138, 0.25) !important;
+  box-shadow: 2px 2px 0px rgba(255, 107, 138, 0.15),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.4) !important;
+}
+
+
+[data-theme="retroflow"] .section-title,
+[data-theme="retroflow"] .queue-title,
+[data-theme="retroflow"] .sidebar-section-title {
+  font-family: var(--font-display) !important;
+  font-size: 1.3em !important;
+  color: var(--accent-primary) !important;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0px rgba(255, 107, 138, 0.15);
+}
+
+
+[data-theme="retroflow"] .progress-bar-container {
+  background: #e0d4f0 !important;
+  border-radius: 8px !important;
+  border: 2px solid rgba(100, 60, 140, 0.12) !important;
+  border-top-color: rgba(100, 60, 140, 0.18) !important;
+  box-shadow: inset 2px 2px 4px rgba(100, 60, 140, 0.08) !important;
+  height: 8px !important;
+}
+
+[data-theme="retroflow"] .progress-bar {
+  background: linear-gradient(90deg, #ff6b8a, #ffb347, #b48aff) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 1px 3px rgba(255, 107, 138, 0.3) !important;
+}
+
+[data-theme="retroflow"] .progress-bar::after {
+  width: 14px !important;
+  height: 14px !important;
+  background: #fff !important;
+  border: 3px solid var(--accent-primary) !important;
+  border-radius: 50% !important;
+  right: -7px !important;
+  box-shadow: 2px 2px 0px rgba(255, 107, 138, 0.2),
+              0 0 8px rgba(255, 107, 138, 0.3) !important;
+}
+
+
+[data-theme="retroflow"] .volume-range-slider {
+  height: 6px !important;
+  border-radius: 6px !important;
+}
+
+[data-theme="retroflow"] .volume-range-slider::-webkit-slider-thumb {
+  background: var(--accent-secondary) !important;
+  border: 2px solid #fff !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  box-shadow: 2px 2px 0px rgba(126, 200, 227, 0.3) !important;
+}
+
+
+[data-theme="retroflow"] .queue-now-playing {
+  background: rgba(255, 107, 138, 0.08) !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  border-right-color: rgba(255, 107, 138, 0.2) !important;
+  border-bottom-color: rgba(255, 107, 138, 0.25) !important;
+  box-shadow: 3px 3px 0px rgba(255, 107, 138, 0.12),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.5) !important;
+  border-radius: 12px !important;
+}
+
+[data-theme="retroflow"] .queue-now-playing-label {
+  color: var(--accent-primary) !important;
+  font-family: var(--font-display) !important;
+  font-size: 14px !important;
+  letter-spacing: 1px;
+}
+
+
+[data-theme="retroflow"] .modal {
+  background: var(--bg-card) !important;
+  border: 3px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(100, 60, 140, 0.25) !important;
+  border-bottom-color: rgba(100, 60, 140, 0.3) !important;
+  box-shadow: 6px 6px 0px rgba(100, 60, 140, 0.2),
+              inset 2px 2px 0px rgba(255, 255, 255, 0.6) !important;
+  border-radius: 16px !important;
+}
+
+[data-theme="retroflow"] .modal-input {
+  background: #1e172e !important;
+  border: 2px solid rgba(100, 60, 140, 0.15) !important;
+  border-top-color: rgba(100, 60, 140, 0.2) !important;
+  box-shadow: inset 2px 2px 4px rgba(100, 60, 140, 0.1) !important;
+  border-radius: 10px !important;
+  color: var(--text-primary) !important;
+}
+
+
+[data-theme="retroflow"] img {
+  border-radius: 10px !important;
+}
+
+[data-theme="retroflow"] .player-album-art {
+  border-radius: 10px !important;
+  border: 3px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 3px 3px 0px rgba(100, 60, 140, 0.15),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="retroflow"] .np-album-art {
+  border-radius: 14px !important;
+  border: 3px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 5px 5px 0px rgba(100, 60, 140, 0.15),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.3) !important;
+}
+
+
+[data-theme="retroflow"] .player-song-title {
+  font-family: var(--font-display) !important;
+  font-size: 18px !important;
+  letter-spacing: 0.5px;
+  color: var(--accent-primary) !important;
+}
+
+
+[data-theme="retroflow"] .sidebar-logo-icon {
+  background: linear-gradient(135deg, #ff6b8a, #ffb347) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(200, 50, 80, 0.3) !important;
+  border-bottom-color: rgba(200, 50, 80, 0.35) !important;
+  box-shadow: 3px 3px 0px rgba(200, 50, 80, 0.2),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.4) !important;
+  border-radius: 10px !important;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+[data-theme="retroflow"] .sidebar-logo-text {
+  font-family: var(--font-display) !important;
+  font-size: 26px !important;
+  color: var(--accent-primary) !important;
+  text-shadow: 2px 2px 0px rgba(255, 107, 138, 0.2);
+  letter-spacing: 1px;
+}
+
+
+[data-theme="retroflow"] .theme-toggle-btn {
+  background: var(--bg-card) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(100, 60, 140, 0.2) !important;
+  border-bottom-color: rgba(100, 60, 140, 0.25) !important;
+  box-shadow: 2px 2px 0px rgba(100, 60, 140, 0.12),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.5) !important;
+  color: var(--accent-primary) !important;
+  border-radius: 50% !important;
+}
+
+
+[data-theme="retroflow"] .playlist-card {
+  background: var(--bg-card) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(100, 60, 140, 0.2) !important;
+  border-bottom-color: rgba(100, 60, 140, 0.25) !important;
+  box-shadow: 3px 3px 0px rgba(100, 60, 140, 0.15),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.5) !important;
+  border-radius: 14px !important;
+}
+
+[data-theme="retroflow"] .playlist-card:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 5px 5px 0px rgba(100, 60, 140, 0.2),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.6) !important;
+}
+
+
+[data-theme="retroflow"] .right-panel {
+  background: var(--bg-sidebar) !important;
+  border-left: 3px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.3),
+              inset -1px 0 0 rgba(100, 60, 140, 0.1) !important;
+}
+
+
+[data-theme="retroflow"] .context-menu {
+  background: var(--bg-card) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(100, 60, 140, 0.2) !important;
+  border-bottom-color: rgba(100, 60, 140, 0.25) !important;
+  box-shadow: 5px 5px 0px rgba(100, 60, 140, 0.2),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.5) !important;
+  border-radius: 12px !important;
+}
+
+
+[data-theme="retroflow"] .track-row:hover {
+  background: rgba(255, 107, 138, 0.08) !important;
+  border-radius: 10px !important;
+}
+
+[data-theme="retroflow"] .track-row-number {
+  color: var(--accent-tertiary) !important;
+  font-family: var(--font-display) !important;
+}
+
+
+[data-theme="retroflow"] .create-playlist-btn {
+  border: 2px dashed rgba(255, 107, 138, 0.3) !important;
+  color: var(--text-muted) !important;
+  border-radius: 10px !important;
+}
+
+[data-theme="retroflow"] .create-playlist-btn:hover {
+  border-color: var(--accent-primary) !important;
+  background: rgba(255, 107, 138, 0.08) !important;
+  color: var(--accent-primary) !important;
+  box-shadow: 2px 2px 0px rgba(255, 107, 138, 0.12) !important;
+}
+
+
+[data-theme="retroflow"] .home-hero {
+  background: var(--hero-gradient) !important;
+}
+
+[data-theme="retroflow"] .home-greeting {
+  font-family: var(--font-display) !important;
+  font-size: 2.2em !important;
+  color: var(--text-primary) !important;
+  text-shadow: 2px 2px 0px rgba(255, 107, 138, 0.2);
+}
+
+
+[data-theme="retroflow"] .song-card-img-wrapper {
+  border-radius: 10px !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.3),
+              2px 2px 0px rgba(100, 60, 140, 0.1) !important;
+  overflow: hidden;
+}
+
+
+[data-theme="retroflow"] .song-card-play {
+  border-radius: 50% !important;
+}
+
+
+@keyframes retroBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+[data-theme="retroflow"] .nav-item.active svg {
+  animation: retroBounce 2s ease-in-out infinite;
+}
+
+
+[data-theme="retroflow"] .toast {
+  background: var(--bg-card) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(100, 60, 140, 0.2) !important;
+  border-bottom-color: rgba(100, 60, 140, 0.25) !important;
+  box-shadow: 4px 4px 0px rgba(100, 60, 140, 0.15),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.5) !important;
+  color: var(--text-primary) !important;
+  border-radius: 12px !important;
+}
+
+
+[data-theme="retroflow"] .auth-modal-root .auth-modal {
+  background: var(--bg-card) !important;
+  border: 3px solid rgba(255, 255, 255, 0.5) !important;
+  border-right-color: rgba(100, 60, 140, 0.25) !important;
+  border-bottom-color: rgba(100, 60, 140, 0.3) !important;
+  box-shadow: 6px 6px 0px rgba(100, 60, 140, 0.2),
+              inset 2px 2px 0px rgba(255, 255, 255, 0.5) !important;
+  border-radius: 18px !important;
+}
+
+
+[data-theme="retroflow"] .queue-track:hover {
+  background: rgba(255, 107, 138, 0.08) !important;
+  border-radius: 10px !important;
+}
+
+[data-theme="retroflow"] .queue-track.playing .queue-track-title {
+  color: var(--accent-primary) !important;
+}
+
+
+[data-theme="retroflow"] .mobile-tab-bar {
+  background: var(--bg-player) !important;
+  border-top: 3px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5),
+              0 -2px 6px rgba(100, 60, 140, 0.08) !important;
+}
+
+[data-theme="retroflow"] .mobile-tab.active {
+  color: var(--accent-primary) !important;
+}
+
+
+[data-theme="retroflow"] .skeleton-shimmer {
+  background: linear-gradient(90deg, #e8dff5 25%, #f3ecfa 50%, #e8dff5 75%) !important;
+}
+
+
+[data-theme="retroflow"] ::-webkit-scrollbar {
+  width: 10px;
+}
+
+[data-theme="retroflow"] ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 5px;
+}
+
+[data-theme="retroflow"] ::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+  border: 2px solid var(--bg-secondary);
+}
+
+[data-theme="retroflow"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
+}
