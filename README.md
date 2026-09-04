@@ -7,7 +7,7 @@ PhantomBeats is a music streaming platform focused on a clean, immersive listeni
 ## 🌐 Website
 
 **PhantomBeats:**  
-https://phantombeats.com
+https://phantombeats.vercel.app
 
 ## 📱 Android App
 
